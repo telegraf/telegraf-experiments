@@ -1,17 +1,17 @@
-# Multivariate and A/B testing middleware for Telegraf
+## Telegraf experiments
 
 [![Build Status](https://img.shields.io/travis/telegraf/telegraf-experiments.svg?branch=master&style=flat-square)](https://travis-ci.org/telegraf/telegraf-experiments)
 [![NPM Version](https://img.shields.io/npm/v/telegraf-experiments.svg?style=flat-square)](https://www.npmjs.com/package/telegraf-experiments)
 
 Multivariate and A/B testing middleware for [Telegraf (Telegram bot framework)](https://github.com/telegraf/telegraf).
 
-## Installation
+### Installation
 
 ```js
 $ npm install telegraf-experiments
 ```
 
-## Example
+### Example
   
 ```js
 const Telegraf = require('telegraf')
