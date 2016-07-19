@@ -42,18 +42,18 @@ experiments.register('feature3', {
 telegraf.use(experiments.middleware())
 
 telegraf.command('/feature1', (ctx) => {
-  const message = ctx.experiment.variant('feature1') === 'A' ? 'A group' : 'B group'
+  const message = ctx.experiments('feature1').id === 'A' ? 'A group' : 'B group'
   return ctx.reply(message)
 })
 
 telegraf.command('/feature2', (ctx) => {
-  const message = ctx.experiment.attachment('feature2')
+  const message = ctx.experiments('feature2').attachment
   return ctx.reply(message)
 })
 
 telegraf.command('/feature3', (ctx) => {
-  // analytics.track('feature3', ctx.experiment.variant('feature3'))
-  const messageFn = ctx.experiment.attachment('feature3')
+  // analytics.track('feature3', ctx.experiments('feature3').id)
+  const messageFn = ctx.experiments('feature3').attachment
   const message = messageFn()
   return ctx.reply(message)
 })
