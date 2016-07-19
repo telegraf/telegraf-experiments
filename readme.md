@@ -31,7 +31,7 @@ const experiments = new TelegrafExperiments(experimentProfile)
 
 experiments.register('feature3', {
   seed: (ctx) => ctx.from.id + 'salt',
-  variants: [
+  groups: [
     {id: 'A', attachment: () => 'Hey A'},
     {id: 'B', attachment: () => 'Hey B', audience: 0.2},
     {id: 'C', attachment: () => 'Hey C', audience: 0.1},
