@@ -1,17 +1,17 @@
-# Multivariate and A/B testing middleware for Telegraf
+## Telegraf experiments
 
 [![Build Status](https://img.shields.io/travis/telegraf/telegraf-experiments.svg?branch=master&style=flat-square)](https://travis-ci.org/telegraf/telegraf-experiments)
 [![NPM Version](https://img.shields.io/npm/v/telegraf-experiments.svg?style=flat-square)](https://www.npmjs.com/package/telegraf-experiments)
 
 Multivariate and A/B testing middleware for [Telegraf (Telegram bot framework)](https://github.com/telegraf/telegraf).
 
-## Installation
+### Installation
 
 ```js
 $ npm install telegraf-experiments
 ```
 
-## Example
+### Example
   
 ```js
 const Telegraf = require('telegraf')
@@ -42,18 +42,18 @@ experiments.register('feature3', {
 telegraf.use(experiments.middleware())
 
 telegraf.command('/feature1', (ctx) => {
-  const message = ctx.experiment.variant('feature1') === 'A' ? 'A group' : 'B group'
+  const message = ctx.experiments('feature1').id === 'A' ? 'A group' : 'B group'
   return ctx.reply(message)
 })
 
 telegraf.command('/feature2', (ctx) => {
-  const message = ctx.experiment.attachment('feature2')
+  const message = ctx.experiments('feature2').attachment
   return ctx.reply(message)
 })
 
 telegraf.command('/feature3', (ctx) => {
-  // analytics.track('feature3', ctx.experiment.variant('feature3'))
-  const messageFn = ctx.experiment.attachment('feature3')
+  // analytics.track('feature3', ctx.experiments('feature3').id)
+  const messageFn = ctx.experiments('feature3').attachment
   const message = messageFn()
   return ctx.reply(message)
 })
