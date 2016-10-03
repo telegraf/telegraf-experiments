@@ -1,6 +1,6 @@
 {
   "name": "telegraf-experiments",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Telegraf multivariate and A/B testing middleware",
   "main": "lib/experiments.js",
   "repository": {
@@ -35,7 +35,7 @@
     "seedrandom": "^2.4.2"
   },
   "peerDependencies": {
-    "telegraf": "^2.0.0"
+    "telegraf": "^2.0.0 || ^3.0.0"
   },
   "devDependencies": {
     "eslint": "^3.1.1",
