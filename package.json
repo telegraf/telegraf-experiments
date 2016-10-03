@@ -35,7 +35,7 @@
     "seedrandom": "^2.4.2"
   },
   "peerDependencies": {
-    "telegraf": "^2.0.0"
+    "telegraf": "^2.0.0 || ^3.0.0"
   },
   "devDependencies": {
     "eslint": "^3.1.1",
